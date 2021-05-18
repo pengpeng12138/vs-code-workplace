@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/vue/2.4.0/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 引用父组件 -->
+        <son @func="getMsg"></son>
+    
+        <!-- 组件模板定义 -->
+        <script type="x-template" id="son">
+          <div>
+            <input type="button" value="向父组件传值" @click="sendMsg" />
+          </div>
+        </script>
+    </div>
+
+</body>
+  <script>
+      // 子组件的定义方式
+      Vue.component('son', {
+      template: '#son', // 组件模板Id
+      methods: {
+        sendMsg() { // 按钮的点击事件
+          this.$emit('func', 'OK'); // 调用父组件传递过来的方法，同时把数据传递出去
+        }
+      }
+    });
+
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
+      data: {},
+      methods: {
+        getMsg(val){ // 子组件中，通过 this.$emit() 实际调用的方法，在此进行定义
+          alert(val);
+        }
+      }
+    })
+  </script>
+</html>

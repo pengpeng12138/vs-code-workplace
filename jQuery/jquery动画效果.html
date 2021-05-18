@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #panel,#flip
+{
+	padding:5px;
+	text-align:center;
+	background-color:#e5eecc;
+	border:solid 1px #c3c3c3;
+}
+#panel
+{
+	padding:50px;
+	display:none;
+}
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script>
+  $(function () {
+    $('button').click(function () {
+      var div = $('div');
+      setInterval(function () {
+        div.animate({
+          height: '300px',
+          opacity: '0.4'
+        }, 'slow');
+        div.animate({
+          width: '300px',
+          opacity: '0.8'
+        }, "slow");
+        div.animate({
+          height: '100px',
+          opacity: '0.4'
+        }, "slow");
+        div.animate({
+          width: '100px',
+          opacity: '0.8'
+        }, "slow");
+      }, 1000)
+    })
+    clearInterval();
+
+
+//动画队列测试，
+
+  })
+</script>
+
+<body>
+  <button>开始动画</button>
+  <div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+  </div>
+  <button id="stop">停止滑动</button>
+  <div id="flip">点我向下滑动面板</div>
+  <div id="panel">Hello world!</div>
+</body>
+
+</html>

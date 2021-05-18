@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    img{
+        height: 500px;
+        width: 500px;
+    }
+    #outer{
+        height: 500px;
+        width: 520px;
+        margin: 20px auto;
+        background-color: bisque;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #imgList{
+        list-style: none;
+        position: absolute;
+        /* 可以根据这里的偏移量来决定第几张图片 */
+        left: -520px;
+       
+    }
+
+    #imgList li{
+        float: left;
+        margin: 0 10px;
+    }
+
+    #navDiv{
+        position:absolute;
+        bottom: 15px;
+    }
+
+    #navDiv a{
+        float: left;
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        margin: 0 5px;
+        /* 设置半透明 */
+        opacity: 0.5;
+        /* 兼容ie8 */
+        filter: alpha(opacity=50);
+    }
+
+    #navDiv a:hover{
+    background-color: black;        
+    }
+</style>
+<script src="../../js练习/tools/tools.js"></script>
+<script>
+    window.onload = function(){
+        //让ul的宽度动态设置
+        var imgList = document.getElementById("imgList");
+        var imgArr = document.getElementsByTagName("img");
+        imgList.style.width = 520*imgArr.length + "px";
+
+        //设置导航按钮居中
+        var navDiv = document.getElementById("navDiv");
+        var outer = document.getElementById("outer");
+        navDiv.style.left = (outer.offsetWidth-navDiv.offsetWidth)/2 + "px";
+        //通过index去控制哪个按钮黑色
+        var index = 0;
+        var allA = document.getElementsByTagName("a");
+        allA[index].style.backgroundColor = "black";
+
+        //为超链接绑定单击相应函数。
+        for(var i=0; i<allA.length ; i++ ){
+            //为每一个超链接都添加一个num属性
+            allA[i].num = i;
+            allA[i].onclick = function(){
+                //关闭自动切换的定时器
+                clearInterval(timer);
+                index = this.num;
+
+                // 第一张 0 0
+                // 第二张 1 -520
+                // 第三张 2 -1040
+                move(imgList , "left" , -520*index , 20 ,function(){
+                    autoChange();
+                });
+                setA();
+            }
+        }
+        
+        autoChange();
+        function setA(){
+
+            //判断当前索引是否是最后一张图片
+            if(index >= imgArr.length-1){
+                index = 0;
+                //此时显示的最后一张图片，而最后一张图片和第一张一模一样
+                //通过css将最后一张切换成第一张
+                imgList.style.left = 0;
+            }
+            //遍历所有a，并将他们的背景色设置为红色
+            for( var i = 0; i<allA.length ; i++){
+                allA[i].style.background = "";
+            }
+            //将选中的a设置为黑色
+            allA[index].style.backgroundColor = "black"
+        }
+
+
+        function autoChange(){
+            timer = setInterval(function(){
+                index++;
+                index%=imgArr.length;
+                move(imgList , "left" , -520*index , 20 ,function(){
+            // 修改导航按钮
+            setA();  
+                })
+            },2000)
+        }
+        }
+</script>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+            <li><img src="5.jpg" alt=""></li>
+            <li<img src="1.jpg" alt=""></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+
+ 
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const youngers = ['ABUBU','KK','KOKOSS'];
+  const olders = ['KKLKO','ASD','DSA'];
+  let members = [...youngers];
+  //直接扩展字符串就会变成一个一个的
+  let member1 = [...'dadasdasd'];
+  let numbers = [...youngers,...olders];
+  console.log(members);
+  console.log(numbers);
+  console.log(member1);
+
+
+
+  //拓展运算符在函数中的应用
+  const fruit = ['a','aasd','dasdas'];
+  const newFruit = ['asaczc','zxczxczxcz'];
+  //这样就可以把newFruit加入到fruit中了。
+  fruit.push(...newFruit);
+  console.log(fruit);
+  </script>
+</body>
+</html>

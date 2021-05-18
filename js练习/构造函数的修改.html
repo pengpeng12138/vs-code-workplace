@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this. sayName = fun;
+        // console.log(fun ==fun());
+        // console.log(typeof(fun));
+        // console.log(typeof(fun()));
+   
+    }
+    function fun(){
+        alert("我是"+this.name);
+    }
+    var a = new Person("孙悟空",11,"男");
+    
+    a.sayName();
+
+</script>
+</html>

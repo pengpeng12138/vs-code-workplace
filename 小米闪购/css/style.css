@@ -1,0 +1,379 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-style: normal;
+}
+ul{
+    list-style: none;
+}   
+body{
+    height: 2400px;
+}
+a{
+    text-decoration: none;
+    font-style:normal;
+}
+.topbar{
+    background-color: #333;
+    height:40px;
+    border: 1px solid black;
+}
+
+
+.topbar .container{
+    margin: 0 auto;
+    width: 1226px;
+}
+
+.topbar .container::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.topbar a{
+    color: #b0b0b0;;
+    font-size: 12px;
+}
+
+.topbar a:hover{
+    color:#fff;
+}
+
+.topbar .container .topbar-nav{
+    float:left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0px;
+}
+
+.topbar .container .topbar-nav span{
+    font-size:12px;
+    color:#424242;
+    font-family: sans-serif;
+    margin:0.5em;
+}
+
+.topbar .container .topbar-info{
+    float:right;
+    margin-right: 15px;
+}
+
+.topbar .container .topbar-info a{
+    float: left;
+    padding: 0 5px;
+    line-height: 40px;
+    height: 40px;
+}
+
+.topbar .container .topbar-info span{
+    float: left;
+    font-family: sans-serif;
+    color:#424242;
+    line-height: 40px;
+    height:40px;
+}
+
+.topbar .container .topbar-info .topbar-car{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align:center;
+    width:120px;
+    background-color: #424242;
+}
+
+.topbar .container .topbar-info i{
+    font-size:20px;
+    line-height: 20px;
+    margin-right:4px;
+    vertical-align: -4px;
+}
+
+.topbar .container .topbar-info .topbar-car:hover{
+    background-color: #fff;
+    color:#ff6700;
+}
+
+
+
+.header{
+    height:100px;
+}
+
+.header .container{
+    width: 1226px;
+    height:100px;
+    margin: 0px auto;
+}
+
+.header-log{
+    float: left;
+    width: 62px;
+    height:55px;
+    margin-top:22px;
+}
+
+.header-log a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: #ff6700 url(../img/mi-logo.png) 100% 100%;
+    text-indent: -9999px;
+}
+
+.header-nav{
+    float: left;
+    width:820px;
+    height:100px;
+}
+
+.header-nav .nav-list{
+    /* width:820px;
+    height:88px;
+    font-size: 16px; */
+    padding: 12px 0 0 38px;
+}
+
+.header-nav .nav-list .nav-category{
+    float:left;
+    width:120px;
+}
+/* 问题所在 */
+.header-nav .nav-list .nav-category a{
+    display: block;
+    padding: 26px 0px 38px;
+    color:#333;
+    text-align: left;
+}
+
+.header-nav .nav-list .nav-item{
+    float:left;
+}
+
+.header-nav .nav-list .nav-item a{
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333;
+}
+
+.header-nav .nav-list .nav-item a:hover{
+    color:#ff6700;
+}
+
+.header-search{
+    float: right;
+    width:296px;
+    height:50px;
+    margin-top:25px;
+}
+
+.header-search .search-form{
+    position: relative;
+    display: block;
+    width:296px;
+    height: 50px;
+}
+
+.header-search .search-form .search-text{
+    position: absolute;
+    top:0px;
+    right: 51px;
+    display:block;
+    width:245px;
+    height: 50px;
+    line-height: 50px;
+    border:1px solid #e0e0e0;
+    outline: 0;
+}
+
+.header-search .search-form .search-btn{
+    top:0px;
+    right:0px;
+    display: block;
+    width:52px;
+    height: 50px;
+    border:1px solid #e0e0e0;
+    font-size:24px;
+    line-height: 24px;
+    background:#fff;
+    outline:0;
+    position: absolute;
+}
+
+.header-search .search-form .search-btn:hover{
+    color:white;
+    background:#f40;
+}
+
+.seckill{
+    width:100%;
+    margin:0 auto;
+    background-color: #f5f5f5;
+}
+
+.seckill .seckill-head{
+    height: 190px;
+    margin-top:19px;
+    /* 问题所在 */
+    background: url(../img/seckill-head.jpg) 50% 0;
+}
+
+.seckill-nav{
+    margin:-68px 0 22px;
+}
+
+.seckill-nav ul{
+    height:68px;
+    background: #414141;
+    width:1226px;
+    margin: 0 auto;
+}
+
+.seckill-nav li{
+    display: block;
+    float:left;
+    color:#fff;
+    width:20%;
+    height:68px;
+    line-height: 68px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.seckill-nav li em{
+    display: inline-block;
+    font-style:normal;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+.seckill-nav li span{
+    display: inline-block;
+    margin-left:15px;
+    text-align: left;
+    vertical-align: middle;
+    font-size:14px;
+    line-height:1;
+    font-style:normal;
+}
+/* 这个没用啊 */
+/* .seckill-nav ul li sapn em{
+    display: inline-block;
+    font-size:14px;
+    margin-left: 0;
+    font-style:normal;
+    text-align: left;
+    line-height: 20px;
+} */
+
+.seckill-nav .active{
+    background: #f1393a;
+}
+
+.seckill-navfixed{
+    position: fixed;
+    top:60px;
+    left:130px;
+}
+
+.seckill-goods .active{
+    display: block;
+    margin: 0 auto;
+}
+
+.seckill-goods ul{
+    display: none;
+}
+
+.seckill-goods li{
+    float:left;
+    width:400px;
+    height:190px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-bottom: 13px;
+    /* margin-right:111px; */
+
+}
+
+.seckill-goods ul::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+.seckill-goods .bg{
+    float:left;
+    width:190px;
+    height:190px;
+}
+
+.seckill-goods .bg img{
+    width: 100%;
+}
+
+.seckill-goods .info{
+    margin-left:210px;
+    width:190px;
+    height: 190px;
+    padding-top:30px;
+}
+
+.seckill-goods .info .name{
+    font-size:16px;
+    color:#333;
+    height:16px;
+    line-height:16px; 
+    display: block;
+    white-space:nowrap; 
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.seckill-goods .info .tips{
+    font-size:12px;
+    line-height:12px;
+    color:#b0b0b0;
+    margin-top:10px;
+}
+
+.seckill-goods .info .price{
+    font-size:16px;
+    line-height:16px;
+    color:#f1393a;
+    margin-top:14px;
+}
+
+.seckill-goods .info .price del{
+    color:#999;
+    font-size:12px;
+    line-height:12px;
+    margin-left:10px;
+}
+
+.seckill-goods .info .btn{
+    display: inline-block;
+    width:118px;
+    height:28px;
+    font-size:14px;
+    color:#fff;
+    line-height:28px;
+    text-align: center;
+    background-color: #f1393a;
+    margin-top:19px;
+}
+
+.seckill-goods .info .person{
+    font-size:12px;
+    line-height:12px;
+    color:#999;
+    margin-top:10px;
+}
+
+.seckill-notice{
+    font-size:12px;
+    color:#999;
+    margin-top:100px;
+    padding-bottom:35px;
+}

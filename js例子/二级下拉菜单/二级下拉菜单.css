@@ -1,0 +1,91 @@
+/* 初始化 */
+body,ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+.clearfixed::after{
+    display: block;
+    content: "";
+    clear:both;
+}
+/* 一级菜单 */
+
+.container{
+    width: 1200px;
+    margin:20px auto;
+}
+.nav-list{
+    background-color: #808080;
+    height:48px;
+    position: absolute;
+}
+.nav-list > li {
+    float: left;
+    margin: 0 20px;
+}
+
+.nav-list > li > a {
+    display: block;
+    padding: 0 12px;
+    color:#fff;
+    font-size:18px;
+    line-height:47px;
+    height:47px;
+    border:1px solid #808080;
+    border-bottom: none;
+    z-index: 2;
+    position: relative;
+}
+.nav-list > li > a:hover {
+    color:#bc0303;
+    background-color:#fff;
+    border:1px solid #c9c9c9;
+    border-bottom: none;
+}
+/* 二级菜单 */
+.item{
+    width:160px;
+    z-index: 1;
+    top:-1px;
+    position: relative;
+    display: none;
+}
+.item-list{
+    
+    background-color: #fff;
+    border:1px solid #c9c9c9;
+    padding: 2px 0px 10px 12px;
+  
+}
+
+.item-list > li {
+    height:40px;
+}
+
+.item-list > li > a {
+    color:#6e6e6e;
+    line-height:40px;
+}
+
+.item-list > li > a:hover{
+    text-decoration: underline;
+}
+/* 显示控制二级菜单 */
+.nav-list .show .item{
+    display: block;
+}
+
+.nav-list > .show > a {
+    color:#bc0303;
+    background-color:#fff;
+    border:1px solid #c9c9c9;
+    border-bottom: none;
+}

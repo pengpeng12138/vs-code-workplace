@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action>
+        <p>
+            你喜欢什么music？
+        </p>
+        <select name="devices"> <!--name特性指定这个表单控件的名称-->
+            <option value="ipad">ipad</option>
+            <option value="radio">radio</option>
+            <option value="computer">computer</option>
+        </select>
+    </form>
+    <form>
+        <p>你喜欢什么乐器？</p>
+        <select name="instruments" size="3" multiple="multiple">
+            <!--size等于三决定了和上面的不同之处，multiple允许选择多个-->
+            <option value="drums">drums</option>
+            <option value="keyboard">keyboard</option>
+            <option value="gurta">gurta</option>
+            <option value="bass">bass</option>
+        </select>
+    </form>
+    <!--文件的上传-->
+    <form>
+        <p>
+            请上传你的mp3
+        </p>
+        <input type="file" name="user-song" />
+        <input type="submit" value="确认" />
+    </form>
+    <!--这里把提交按钮变成了一个图片-->
+    <form>
+        <p>
+            输入你的邮箱
+        </p>
+        <input type="text" name="email" />
+        <input type="image" src="http://img1.xcarimg.com/exp/2872/2875/2937/20101220130509576539.jpg" width="100" height="20" />
+    </form>
+</body>
+<!--这是标签表单控件-->
+<label>
+    Age:<input type="text" name="age" />
+</label>
+<br /> Gender:
+<!--注意for特性是用来声明标签控件标注的是哪个表单控件，id和for相对应-->
+<input id="female" type="radio" name="gender" value="f" />
+<label for="female">female</label>
+<input id="male" type="radio" name="gender" value="m" />
+<label for="male">male</label>
+<!--组合表单元素-->
+<fieldset>
+    <legend>这里是legend</legend>
+    <label>email:<br/>
+    <input type="text" name="email" /><br/>
+    </label>
+    <label>qqnumber:<br/>
+    <input type="text" name="qqnumber" /><br/>
+    </label>
+
+    <input type="text" name="tel" />
+    <label>tel</label>
+
+</fieldset>
+
+</html>

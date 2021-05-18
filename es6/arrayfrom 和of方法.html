@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>Go to Store</li>
+    <li>Watch TV</li>
+    <li>Go Shopping</li>
+    
+  </ul>
+</body>
+
+<script>
+const todos = document.querySelectorAll('li');
+console.log(todos);
+//Array.from可以把一个非数组转化为数组对象
+const todoArr = Array.from(todos);
+console.log(todoArr);
+const names = todoArr.map(todo => todo.textContent)
+console.log(names);
+// 或者用这个语句，
+// const name = Array.from(todos,todo => todo.textContent);
+
+//Array.of传入的不管是多少个数字，最后都会变成一个数组，保证一致性。
+
+
+
+const inventory = [
+  {name: 'apples', quantity:2},
+  {name: 'b', quantity:2},
+  {name: 'c', quantity:2},
+  {name: 'd', quantity:2},
+];
+//find
+const b = inventory.find(fruit =>{
+  if(fruit.name === 'apples'){
+    return ture;
+  }
+  return false;
+})
+//findindex,返回索引值
+const bIndex = inventory.findIndex(food => food.name==='apples');
+//some看是不是存在满足条件的，存在就返回
+const isEnough = inventory.some(food => food.quantity >0);
+//every,返回ture或者false，看是不是全部满足条件。
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    arr = [1,45,6,2,1,2,3,5,4,];
+    //回调函数
+    arr.sort(function(a,b){
+        //sort中返回一个大于0的数会交换位置
+        // 调用哪个元素不确定但是一定的是a一定在b前面
+        //返回一个小于0的数则位置不变
+        //返回0则浏览器认为两个数字相等，也不交换位置
+       //升序排列
+       //return a-b;
+      //降序排列
+      return b-a;
+    });
+    alert(arr);
+</script>
+</html>

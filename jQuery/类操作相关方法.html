@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.class1{
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+}
+
+.class2{
+  border: 10px solid black;
+}
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script>
+ $(function(){
+  var btn = document.getElementsByTagName('button');
+
+  btn[0].onclick = function(){
+    $('div').addClass('class1 class2');
+  }
+
+  btn[1].onclick = function(){
+    $('div').removeClass('class1 class2');
+  }
+
+  btn[2].onclick = function(){
+    $('div').toggleClass('class1 class2');
+  }
+ })
+</script>
+<body>
+  <button>添加类</button>
+  <button>删除类</button>
+  <button>切换类</button>
+  <div></div>
+</body>
+</html>

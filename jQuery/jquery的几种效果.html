@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #panel,
+  #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+  }
+  #panel{
+    padding:50px;
+    display: none;
+  }
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js">
+</script>
+<script>
+  $(function(){
+    $('#flip').click(function(){
+      $('#panel').slideToggle('fast');
+    })
+  })
+</script>
+<body>
+  <div id='flip'>点我滑下面板</div>
+  <div id='panel'>Hello</div>
+</body>
+
+</html>

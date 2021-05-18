@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box1{
+        width: 100px;
+        height: 100px;
+        background-color:black;
+        position: absolute;
+    }
+
+    #box2{
+        width: 100px;
+        height: 100px;
+        background-color:green;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+
+    }
+</style>
+<script>
+    window.onload = function () {
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        drag(box1);
+        drag(box2);
+
+        function drag(obj) {
+            obj.onmousedown = function (e) {
+                //解决鼠标一直在左上角的问题
+                e = e || window.e;
+                var top = e.clientY - obj.offsetTop;
+                var left = e.clientX - obj.offsetLeft;
+                obj.setCapture && obj.setCapture();
+                document.onmousemove = function (e) {
+                    e = e || window.e;
+                    obj.style.top = e.clientY - top + "px";
+                    obj.style.left = e.clientX - left + "px";
+
+
+                    document.onmouseup = function () {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+
+                    }
+                    return false;
+                obj.releaseCapture && obj.releaseCapture();
+                }
+            }
+        }
+
+
+    }
+</script>
+
+<body>
+    jj
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>

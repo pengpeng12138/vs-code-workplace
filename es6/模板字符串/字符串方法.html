@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const id = '5102516518489';
+  const fan = 'I love La';
+  function padder(string,length = 25){
+    return `${' '.repeat(Math.max(length - string.length,0))}${string}`
+
+  }  
+  console.log(padder(id));
+  console.log(padder(fan));
+  </script>
+</body>
+</html>

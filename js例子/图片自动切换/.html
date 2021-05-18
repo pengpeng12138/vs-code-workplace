@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    img{
+    height: 500px;
+    width: 500px;
+    }
+</style>
+<script>
+    window.onload = function(){
+        var img = document.getElementById("img1");
+        var imgArr = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+        var index = 0;
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+       
+        btn1.onclick = function(){
+        //开启之前把之前的那个定时器关闭了,防止你点击开启多次。
+        clearInterval(time);
+         //开启一个定时器来切换图片
+        time = setInterval(function(){
+        index++;
+        //实现一个循环
+        index = index%imgArr.length;
+        img.src = imgArr[index];
+        },1000)
+        }
+
+        btn2.onclick = function(){
+            clearInterval(time);
+        }
+        
+    }
+</script>
+<body>
+    <img id="img1" src="1.jpg">
+    <button id="btn1">开启</button>
+    <button id="btn2">关闭</button>
+</body>
+</html>

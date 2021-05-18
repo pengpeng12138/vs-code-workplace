@@ -1,0 +1,44 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-image: url(fy.jpeg);
+    background-size: 100px 100px; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+a{
+    margin-top: 90px;
+    display: inline-block;
+    text-decoration: none;
+    color: #424242;
+    height: 90px;
+    width: 190px;
+    background-image: url(fy.jpeg);
+    background-size: 190px 90px;
+
+    /* 解决网速不好的情况下的仍能有用的方法 */
+    text-indent: 190px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 或者这样
+    a{
+    margin-top: 90px;
+    display: inline-block;
+    text-decoration: none;
+    color: #424242;
+    height: 0px;
+    pading-top:90px;
+    overflow:hidden;
+    width: 190px;
+    background-image: url(https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png);
+    background-size: 190px 90px;
+    text-indent: 190px;
+    white-space: nowrap;
+    overflow: hidden;
+    */
+   
+    
+}
+

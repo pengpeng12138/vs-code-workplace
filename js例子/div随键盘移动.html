@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    window.onload =function(){
+        var dir;
+        var speed = 10;
+        setInterval(function(){
+            switch(dir){
+               case 37:
+               box.style.left = box1.offsetLeft - speed +"px";
+               break;
+               case 38:
+               box.style.top = box1.offsetTop - speed +"px";
+               break;
+               case 39:
+               box.style.left = box1.offsetLeft + speed +"px";
+               break;
+               case 40:
+               box.style.top = box1.offsetTop + speed +"px";
+               break;
+           } 
+        },10)
+
+        var box = document.getElementById("box1");
+        document.onkeydown = function(e){
+            e = e || window.e;
+            if(e.ctrlKey){
+                speed = 50;
+            }else{
+                speed = 10;
+            }
+            dir = e.keyCode;
+        }
+        document.onkeyup = function(){
+            dir = 0;
+        }
+    }
+</script>
+<body>
+    <div id="box1" style="width:100px; height:100px; background-color:black ;position: absolute;"></div>
+</body>
+</html>

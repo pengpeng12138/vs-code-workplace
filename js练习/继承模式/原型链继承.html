@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义父类型构造函数
+    function Supper(){
+        this.supProp = "Supper property"
+    }
+    //给父类型的原型添加方法
+    Supper.prototype.showSupperProp = function(){
+        console.log(this.supProp)
+    }
+    //定义子类型的构造函数
+    function Sub(){
+        this.subProp = "Sub property"
+    }
+    //子类型的原型为父类型的一个实例对象
+    Sub.prototype = new Supper();
+    //这一步很重要，让子类型的原型的constructor指向子类型,不然sub.construcor会指向Supper，因为constructor是原型对象的属性
+    Sub.prototype.constructor = sub;
+    //给子类型原型添加方法
+    Sub.prototype.showSubProp = function(){
+        console.log(this.subProp);
+    }
+    var sub = new Sub();
+    sub.showSupperProp();
+    sub.showSubProp();
+    </script>
+</body>
+</html>

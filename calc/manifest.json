@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "my-calculator",
+    "description": "A simple calculator",
+    "version": "0.0.1",
+
+    "permissions": [
+        "tabs",
+        "http://www.cnblogs.com/"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/icon_active.png",
+        "default_title": "Calculate it",
+        "default_popup": "calculator.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["*://www.cnblogs.com/*"],
+        "js": ["js/jquery.js", "js/content.js"]
+    }]
+}

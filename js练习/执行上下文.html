@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+   
+</body>
+ <script>
+        
+            console.log(a1)//这个和下面的意思是一样的
+            console.log(window.a1);
+            console.log(a2);//是一个指针，直接指a2();
+            console.log(".......................................................................................")
+            a2();//这个可以输出
+            window.a2();
+            console.log(a2());//这个显示undefined;
+            console.log(this);//this就是window
+            var a1 = 3;
+            function a2(){
+                console.log("输入a2");
+            }
+       
+        </script> 
+</html>

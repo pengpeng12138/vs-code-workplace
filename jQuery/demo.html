@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+div{
+width: 130px;
+height: 50px;
+padding: 15px;
+margin: 15px;
+background-color: green;
+}
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js">
+</script>
+<script>
+  //jquery的入口函数
+$(function(){
+  $('.hidebtn').click(function(){
+    //第二个参数是一个字符串，表示过渡使用哪种缓动函数。（译者注：jQuery自身提供"linear" 和 "swing"，其他可以使用相关的插件）。
+    $('div').hide(1000,'swing',function(){
+      alert("方法已乘公共");
+    })
+  })
+
+  function AClass(){
+
+  };
+  AClass.prototype.method = function(){
+    alert('nihao')
+  }
+  AClass.method();
+ 
+})
+</script>
+<body>
+<div>隐藏及设置回调函数</div>
+<button class='hidebtn'>隐藏</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=script, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const fruits = ['Apple' , 'Banana' , 'Orange','jia']
+  for(let i = 0;i<fruits.length;i++){
+    console.log(fruits[i]);
+  }
+
+  fruits.forEach(fruit =>{
+    // if(fruit ==='Orange'){
+    //   break;
+    // }这样就会出错
+    console.log(fruit);
+  });//forench方法的缺点就是不能终止或者跳过。
+  
+
+
+  for(let index in fruits){
+    console.log(fruits[index]);
+  }//for in 遍历的是可枚举属性。所以就算fruits有其他属性也会遍历出来
+  
+
+  //for of 就可以解决上面的问题
+  for(let fruit of fruits){
+    console.log(fruit);
+  }
+  </script>
+</body>
+</html>

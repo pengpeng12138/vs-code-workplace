@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://cdn.staticfile.org/vue/2.4.0/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>这里是父组件</h3>
+        <child>
+            <span>菜单1</span>
+            <span>菜单2</span>
+            <span>菜单3</span>
+        </child>
+    </div>
+</body>
+<script>
+    Vue.component('child',{
+    template:
+     `
+     <div>
+        <h3>这里是子组件</h3>
+        <slot></slot>
+    </div>
+    `
+    })
+
+    var vm = new Vue({
+        el: '#app',
+    });
+</script>
+</html>

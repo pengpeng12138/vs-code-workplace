@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .father{
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+  }
+  .son{
+    width: 100px;
+    height: 100px;
+    background-color:red
+   }
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script>
+  $(function(){
+      // $('.father').mouseenter(function(){
+      //   console.log('father被一如了')
+      // })
+
+      // $('.father').mouseleave(function(){
+      //   console.log('father被移出了');
+      // })
+
+      $('.father').hover(function(){
+        console.log('进去了！')
+      },function(){
+        console.log('除却了！')
+      })
+  })
+</script>
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+</body>
+</html>

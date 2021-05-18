@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: blanchedalmond;
+        position:absolute;
+    }
+</style>
+
+<script>
+    window.onload = function(){
+        var box = document.getElementById("box");
+        document.onmousemove = function(e){
+            //解决兼容问题
+            e = e ||window.e;
+            //解决因为滚动条带来的bug咩，前者是ie用，后者chorme用。
+            var st = document.documentElement.scrollTop||document.body.scrollTop;
+            var sl = document.documentElement.scrollLeft||document.body.scrollLeft;
+            var x = e.clientX;
+            var y = e.clientY;
+            box.style.left = x+sl+"px";
+            box.style.top = y+st+"px";
+        }
+    }
+</script>
+<body style="height: 1000px; width: 2000px;">
+    <div id="box"></div>
+</body>
+</html>

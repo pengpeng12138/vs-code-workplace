@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5{
+position: absolute;
+width: 100px;
+height:100px;
+border:10px solid black;
+border-radius: 50%;
+}
+
+#plat{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left:-190px;
+    margin-top:-93px; 
+ 
+    height: 186px;
+    width: 380px;
+
+}
+.circle1{
+    border-color:red;
+    left:0;
+    top:0;
+    z-index: 5;
+}
+
+.circle2{
+    border-color: bisque;
+    left: 130px;
+    top:0;
+}
+.circle3{
+    border-color: blueviolet;
+    left:260px;
+    top:0;    
+}
+.circle4{
+    border-color: blanchedalmond;
+    left:65px;
+    top:70px;
+}
+.circle5{
+  border-color: darkorange;
+  left: 195px;
+  top:70px;  
+}

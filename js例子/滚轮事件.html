@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box1{
+        width: 100px;
+        height: 100px;
+        background-color:green;
+    }
+</style>
+<script>
+    window.onload = function(){
+    var box1 = document.getElementById("box1");
+    box1.onwheel = function(e){
+        e = e || window.e;
+        if(e.wheelDelta > 0 || e.deltaY < 0 ){
+            box1.style.height = box1.clientHeight - 10+"px" ;
+           box1.style.height -= 10 ;
+
+            
+        }else{
+            box1.style.height = box1.clientHeight + 10 + "px";
+        }
+        //取消浏览器默认行为
+        return false;
+    }
+    //针对火狐提供的方案。
+    box1.addEventListener("DOMMouseScroll",box1.onwheel ,false);
+    }
+   
+</script>
+<body style="height:2000px">
+    <div id="box1"></div>
+</body>
+</html>

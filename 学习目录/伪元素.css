@@ -1,0 +1,15 @@
+span::before{
+    content: "鹏哥";
+}
+
+span::after{
+    content:"真的么？"
+}
+.triangle{
+    width: 0; /* 矩形宽度 */
+    height:0; /* 矩形高度 */
+    background: red; /* 矩形背景颜色*/
+    border-width: 50px;/* 边框宽度 */
+    border-style: solid;/* 边框为实线 */
+    border-color: transparent transparent #00ff00 transparent;/* 边框颜色 上  右  下  左*/
+}

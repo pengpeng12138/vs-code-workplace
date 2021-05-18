@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+#a{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    
+}
+#b{
+    width:200px;
+    height: 200px;
+    border: 1px solid black;
+}
+</style>
+<script>
+window.onload = function(){
+var a = document.getElementById("a");
+var b = document.getElementById("b");
+a.onmousemove = function(e){
+    e = e||window.e;
+    var x = e.clientX;
+    var y = e.clientY;
+    console.log(x,y);
+    b.innerHTML = "x="+ x +"y="+ y;
+}
+}
+</script>
+<body>
+    <div id="a" ></div>
+    <div id="b"></div>
+</body>
+</html>

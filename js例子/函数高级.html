@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// console.log(Date.prototype ,typeof Date.prototype);
+// function Fun(){
+
+// }
+
+// console.log(Fun.prototype);
+
+// console.log(Date.prototype.constructor === Date);
+// console.log(Fun.prototype.constructor === Fun);
+// //原型添加方法
+// Fun.prototype.test = function(){
+//     alert("我爱你")
+// }
+
+// var fun = new Fun();
+// fun.test();
+function A(){}
+A.prototype.n = 1
+var b = new A();
+A.prototype = {
+n=2,
+m=3
+}
+var c = new A();
+console.log(b.n ,b.m ,c.n ,c.m)
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(){
+            var a = 2;//此时闭包已经产生，因为函数提升导致内部函数对象已经创建了
+            function fn2(){
+                a++;
+                console.log(a);
+            }
+            return fn2();//常见的闭包，将函数作为另一个函数的返回值。还有一个
+        }
+        var f = fn1();
+        f();
+        f();
+
+        //将函数作为实参传递给另一个函数调用,外部函数showDelay，内部函数setTimeout，内部函数调用了msg。
+        function showDelay(msg,time){
+            setTimeout(function(){
+                alert(msg);
+            },time)
+        }
+        showDelay("d",2000);
+    </script>
+</body>
+</html>

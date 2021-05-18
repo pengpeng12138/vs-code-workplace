@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .clearfixed::after {
+        content: both;
+        display: block;
+        clear: both;
+    }
+    #left {
+        float: left;
+        width: 140px;
+    }
+
+    #right {
+        margin-left:10px;
+        float:left;
+        width:440px;
+    }
+
+    #left img {
+        width: 140px;
+    }
+
+    #right img {
+        width: 440px;
+        display: none;
+    }
+
+    #right .show{
+        display: block;
+    }
+    #pointer {
+        position: absolute;
+        top:0;
+        left: 0;
+        margin-top: 4px;
+    }
+    .box {
+        position: relative;
+    }
+
+</style>
+
+<body>
+    <div class="box clearfixed">
+        <div id="left">
+            <img src="1.jpg" alt="">
+            <img src="2.jpg" alt="">
+            <img src="3.jpg" alt="">
+        </div>
+        <img src="pointer.png" alt="" id="pointer">
+        <div id="right">
+            <img src="1.jpg" alt="" class="show">
+            <img src="2.jpg" alt="">
+            <img src="3.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        var leftImgAry = document.getElementById("left").getElementsByTagName("img");
+        var rightImgAry = document.getElementById("right").getElementsByTagName("img");
+        var pointer = document.getElementById("pointer");
+        var TopAry = [0,82,164];
+
+        for(var i = 0;i< leftImgAry.length;i++ ){
+            leftImgAry[i].onmouseover = MouseOver;
+            leftImgAry[i].index = i;
+        }
+        function MouseOver(){
+            console.log(this.index);
+            for(var i = 0;i<rightImgAry.length;i++){
+                if(i === this.index){
+                    //右侧图片显示
+                rightImgAry[i].className = "show";
+
+                //pointer移动
+                Top = TopAry[i];
+                nowTop = pointer.offsetTop;
+                if(moveLoop == null){
+                    moveLoop = setInterval(moveTo,10);
+                }
+                }else{
+                    rightImgAry[i].className = "";
+                }
+            }
+        var moveLoop = null;
+        var Top = 0;
+        var nowTop = 164;
+        var speed = 4;
+        function moveTo(){
+            //从上往下移动
+            if(nowTop < Top){
+                nowTop += speed;
+                if(nowTop >= Top){
+                    nowTop = Top;
+                    clearInterval(moveLoop);
+                    moveLoop = null;
+                }
+                pointer.style.top = nowTop + "px";
+            }
+            //从下往上移动
+            if( nowTop > Top){
+                nowTop -= speed;
+                if( nowTop <=Top){
+                    nowTop = Top;
+                    clearInterval(moveLoop);
+                    moveLoop = null;
+                }
+            }
+            if( nowTop == Top){
+                clearInterval(moveLoop);
+                moveLoop = null;
+               
+            }
+            pointer.style.top = nowTop + "px";
+
+        }
+    }
+
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div  ref="app" id="app">{{name}}</div>
+  <div>11</div>
+</body>
+<script>
+  const HelloVueApp = {
+
+    data() {
+      return {
+        name: "前端君"
+      }
+
+    },
+
+    beforeMount() {
+      console.log('即将挂载');
+      console.log(this.$el);
+    },
+    mounted(){
+    console.log('挂载完毕');
+    console.log(this.$el);
+ },
+ beforeUpdate(){
+  console.log('=即将更新渲染=');
+  let name = this.$refs.app.innerHTML;
+  console.log('name:'+name);
+ },
+  }
+
+  Vue.createApp(HelloVueApp).mount('#app')
+</script>
+
+</html>

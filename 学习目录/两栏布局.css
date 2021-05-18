@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.right{
+position: absolute;
+right: 0;
+width: 100px;
+height: 100px;
+background-color: aqua;
+opacity: 0.5;
+}
+
+.left{
+height: 100px;
+margin-right:100px;
+background-color:#123;
+}
+
+iframe{
+    width:"450"
+    height:"350"
+}

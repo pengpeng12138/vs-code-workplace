@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./首页/首页-08.png">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding:0;
+  }
+  #big{
+    overflow: scroll;
+    background-color: black;
+  }
+  #head{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background: url('./首页/首页-08.png');
+    left: 0;
+    top: 0;
+  }
+  #head ul{
+  display: flex;
+  text-align: center;
+   width: 65%;
+   height: 50px;
+   margin: 0 auto;
+   
+  }
+  #head ul li{
+   flex: 1;
+   text-align: center;
+   color: aliceblue;
+   margin-top: 13px;
+  }
+  li{
+list-style: none;
+}
+#container{
+ 
+  border: 1px solid black;
+  width: 60%;
+  margin: 2px auto;
+  position: relative;
+}
+#bg07{
+  background:url('./首页/首页-07.png');
+  margin: 0 auto;
+  width:60%;
+  height: 420px;
+  background-size: 100% 100%;
+}
+#bg06{
+  background:url('./首页/首页-06.png');
+  width: 20%;
+  height: 350px;
+  position: absolute;
+  margin-top: 20px;
+}
+#bg03{
+  background:url('./首页/首页-03.png');
+  position: relative;
+  width: 20%;
+  height: 350px;
+  margin-left: 352px;
+}
+#bg04{
+  background:url('./首页/首页-04.png');
+  position: relative;
+  width: 20%;
+  height: 350px;
+  margin-left: 350px;
+}
+
+#foot{
+  background: url('./首页/首页-01.png');
+  position:fixed;
+  height: 150px;
+  margin-bottom:-50px;
+  background-size: 100% 100%;
+}
+</style>
+<link rel="stylesheet" href="../">
+<body>
+  <div id= "big">
+    <div id=head>
+  <ul>
+    <li>首页</li>
+    <li>概览</li>
+    <li>资讯</li>
+    <li>展览</li>
+    <li>活动</li>
+    <li>服务</li>
+    <li>有声</li>
+  </ul>
+  <div id="bg07"></div>
+  <div id="container">
+    
+    <div id='bg06'></div>
+    <div id='bg03'></div>
+    <div id='bg04'></div>
+    <div id='bg02'></div>
+    <div id='bg05'></div>
+  </div>
+
+
+  <div id="foot">
+
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

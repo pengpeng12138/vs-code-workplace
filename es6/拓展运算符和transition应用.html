@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+h2{
+  background: yellow;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 50px;
+  color: white;
+  text-shadow: 3px 3px rgba(0,0,0,0.2);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heading span{
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.25s;
+}
+
+/* 实现具体的动画效果 */
+.heading span:hover{
+  transform: translateY(-20px) rotate(10deg) scale(2)
+}
+</style>
+<body>
+  <h2 class='heading'>PENGGEGE</h2>
+</body>
+<script>
+const heading = document.querySelector('.heading');
+heading.innerHTML = wrapWithSpan(heading.textContent);
+//给每个文字都加上span的函数
+console.log(wrapWithSpan(heading.textContent));
+function wrapWithSpan(word){
+  //通过这个来扩展字符串，使得可以操作每一个字符,并且把span包裹每一个标签
+  return[...word].map(letter =>`<span>${letter}</span>`).join('');
+}
+</script>
+</html>

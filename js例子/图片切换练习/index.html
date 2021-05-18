@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    .outer{
+       width: 700px;
+       height: 550px;
+       border: 1px solid black;
+       padding: 10px;
+       background-color: cadetblue;
+       margin:50px auto;
+       text-align: center;
+    }
+    img{
+        display:block;
+        margin:0 auto;
+        width: 700px;
+        height: 500px;
+    }
+   
+</style>
+
+<script>
+    window.onload = function(){
+    var prep = document.getElementById("prep");
+    var next = document.getElementById("next");
+    var img = document.getElementsByTagName("img")[0];
+    var imgArr =["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+    var index = 0;
+    prep.onclick = function(){
+        console.log(img)
+        index--;
+        if(index < 0){
+            index = imgArr.length-1;
+        }
+        img.src = imgArr[index];
+        p.innerHTML = "一共"+(imgArr.length)+"张图片，当前第"+(index+1)+"张图片"
+    }
+
+    next.onclick = function(){
+        console.log(img)
+        index++;
+        if(index > imgArr.length-1){
+            index = 0;
+        }
+        img.src = imgArr[index];
+        p.innerHTML = "一共"+(imgArr.length)+"张图片，当前第"+(index+1)+"张图片"
+    }
+
+    var p = document.getElementsByTagName("p")[0];
+    p.innerHTML = "一共"+(imgArr.length)+"张图片，当前第"+(index+1)+"张图片"
+    };
+</script>
+<body>
+    <div class="outer">
+        <p></p>
+      <img src="1.jpg" alt="冰棍">
+      <button id="prep">上一张</button>
+      <button id="next">下一张</button>
+    </div>
+</body>
+</html>

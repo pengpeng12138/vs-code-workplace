@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+p{
+    width: 200px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid black;
+    /* 让文字成一段展示 */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 溢出部分文本变成省略号 */
+    text-overflow: ellipsis;
+
+
+}

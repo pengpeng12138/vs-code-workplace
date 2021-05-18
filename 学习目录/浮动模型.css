@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 350px;
+    
+    border:1px solid black;
+}
+
+.content{
+    float: left;
+    color: chocolate;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: aquamarine;
+    width: 100px;
+    height:100px;
+
+}
+
+p{
+    border-top: 0 solid chocolate;
+    clear: both;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>腾讯首页</title>
+    <style>
+    body{
+        height:970px;
+        margin:0;
+        padding: 0;
+    }
+
+    .ad{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width:400px;
+        height: 0;
+        /* transition: height 1s; */
+    }
+
+    .btn{
+        position: absolute;
+        top:0;
+        right:0;
+        cursor: pointer;
+    }
+
+    .bg{
+        width:400px;
+    }
+    </style>
+</head>
+<body>
+    <iframe src="http://www.qq.com" frameborder="0" width="100%" height="100%"></iframe>
+    <div id="myAD" class="ad">  
+        <img id="myClose" class="btn" src="close.jpg" alt="">
+        <a href=""><img class="bg" src="0.jpg" alt=""></a>
+    </div>
+
+    <script>
+    var myAD = document.getElementById("myAD");
+    var myClose = document.getElementById("myClose");
+    var adHeight = 0;
+
+    
+    myClose.onclick = function(){
+            var dis = setInterval(disFunc,1);
+            function disFunc(){
+                if(adHeight !==300){
+                    adHeight -= 1;
+                    myAD.style.height = adHeight + "px"; 
+                }else{
+                    clearInterval(disFunc);
+                }
+            }
+        }
+       
+    
+    
+   
+    function adShowFunc(){
+      if(adHeight < 225){
+          adHeight += 1;
+          myAD.style.height = adHeight + "px";
+      } else{
+          clearInterval(show);
+      }
+    }
+
+    window.onload = function(){
+        var show = setInterval(adShowFunc,1);
+    }
+    </script>
+  
+   
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+  }
+
+  .box{
+    width: 300px;
+    height: 450px;
+    border: 1px solid #000;
+    margin: 50px auto;
+  }
+
+  /* 设置电影排行榜格式 */
+  .box>h1{
+    font-size: 20px;
+    line-height: 35px;
+    color: deeppink;
+    padding-left: 10px;
+    border-bottom: 1px dashed #000;
+  }
+
+  ul>li{
+    list-style: none;
+    padding: 5px 10px;
+    border: 1px dashed #ccc;
+  }
+
+  /* 设置前三个的小方块的颜色,n写负数有向前的效果 */
+  ul>li:nth-child(-n+3) span{
+    background:deeppink;
+  }
+
+  ul>li>span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+  }
+  .content{
+    margin-top: 5px;
+    overflow: hidden;
+    /* 让他隐藏 */
+    display: none;
+  }
+  .content>img{
+    width: 80px;
+    height: 120px;
+    float: left;
+  }
+
+  .content>p{
+    width: 180px;
+    height: 120px;
+    float: right;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /* 让他出来 */
+  .current .content{
+    display: block;
+  }
+  
+</style>
+<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script>
+  $(function(){
+    $('li').mouseenter(function(){
+      $(this).addClass('current');
+    })
+    $('li').mouseleave(function(){
+      $(this).removeClass('current');
+    })
+  })
+</script>
+<body>
+  <div class='box'>
+    <h1>电影排行榜</h1>
+    <ul>
+      <li><span>1</span>电影名称
+      <div class="content">
+      <img src="zl.jpg" alt="">
+      <p>简介：故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场</p>
+      </div></li>
+      <li><span>2</span>电影名称</li>
+      <li><span>3</span>电影名称</li>
+      <li><span>4</span>电影名称</li>
+      <li><span>5</span>电影名称</li>
+      <li><span>6</span>电影名称</li>
+    </ul>
+  </div>
+</body>
+</html>

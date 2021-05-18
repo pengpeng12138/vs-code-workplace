@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 这个是用来计算斐波拉契数列第几位是多少数字的方法 -->
+    <input type="text" placehoder="数值" id="number">
+    <button id="btn">计算</button>
+    <script>
+        var input = document.getElementById("number");
+        document.getElementById("btn").onclick = function(){
+            var number = input.value;
+            //创建一个worker
+            var worker = new Worker("分线程.js");
+            //绑定接受消息的监听
+            worker.onmessage = function(event){
+                //event.data是固定数据
+                console.log("主线程接受分线程返回的数据"+event.data);
+                alert(event.data)
+            }
+            //向分线程发送数据
+            worker.postMessage(number);
+            console.log("主线程向分线程发送数据");
+        }
+    </script>
+</body>
+</html>

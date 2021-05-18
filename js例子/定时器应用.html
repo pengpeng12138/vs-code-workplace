@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        position: absolute;
+        left: 0;
+    }
+</style>
+<script src="../tools/tools.js"></script>
+<script >
+window.onload = function(){
+    var btn01 = document.getElementById("btn01");
+    var box = document.getElementById("box");
+    var btn02 = document.getElementById("btn02")
+    var btn03 = document.getElementById("btn03");
+    
+  
+    btn01.onclick = function(){
+      move(box,"left",800,10);
+    }
+    btn02.onclick =  function(){
+        move(box,"left",0 ,10);;
+    }
+    btn03.onclick = function(){
+        move(box,"height",800 ,10,function(){
+            move(box,"width",800,10,function(){})
+        });;
+    }
+ 
+    
+
+
+}
+</script>
+<body>
+    
+    <button id="btn02">点击按钮向左移动</button>
+    <button id="btn01">点击按钮向右移动</button>
+    <button id="btn03">测试按钮</button>
+    <div id="box"></div>
+    <div style="width:0;height: 1000px;border-left:1px solid black;position:absolute;left: 800px;top: 0;"></div>
+    <div style="width:1000px;height: 0;border-top:1px solid black;position:absolute;left: 0;top: 800px;"></div>
+</body>
+</html>

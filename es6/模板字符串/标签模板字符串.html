@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=4, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <high>
+    <!-- 里面可以放一些让user和topic高亮的语法 -->
+  </high>
+  <script>
+    function high(strings, ...values){//。。。value表示剩余参数构成的数组
+      //这个函数会接受模板字符串的参数，string表示模板字符串里面普通的字符，随后紧跟模板字符串里面的变量。
+    debugger;
+    }
+    const user = 'Mary';
+    const topic = 'Learn to use markdown';
+    const sentence = high`${user} has conmmented on your topic ${topic}`;
+  </script>
+</body>
+</html>

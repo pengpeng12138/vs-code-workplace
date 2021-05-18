@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 让所有的字体颜色都初始化为黑色 */
+    color:#424242;
+    font-family: Arial;
+}
+
+/* 清除浮动流，以免产生影响 */
+.nav::after{
+    content:"";
+    display: block;
+    /* clear这个东西只对块级元素生效 */
+    clear: both;
+}
+
+.nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.nav .list-item{
+    float:left;
+    margin:0 20px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+}
+.nav .list-item a{
+    color: #f40;
+    font-weight: bold;
+    padding: 0 10px;
+    border-radius: 10px;
+    height: 30px;
+    /* 因为a标签是行级元素，改变不了高度 */
+    display: block;
+}
+.nav .list-item a:hover{
+background-color: #f40;
+color:#fff;
+}

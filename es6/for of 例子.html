@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+.completed{
+  text-decoration: line-through;
+}
+</style>
+<body>
+
+  <ul>
+    <li>Go to Store</li>
+    <li>Watch Tv</li>
+    <li>GO shopping</li>
+  </ul>
+  <script>
+
+    //可以通过entries来取出索引值和集体的值
+  const fruits = ['Apple','Banaan', 'Orange', 'MAnge']
+  for(var fruit of fruits.entries()){
+    console.log(fruit);
+  }
+
+  //通过字符串模板来使用
+  for(let[index ,fruit] of fruits.entries()){
+    console.log(`${fruit} ranks ${index+1} in my fruies`)
+  }
+//返回与指定的选择器组匹配的文档中的元素列表,可以使用多种选择器 
+  const lis = document.querySelectorAll('li');
+  for(let li of lis){
+    li.addEventListener('click',function(){
+      //toggle是jQuery的方法，切换状态
+      //classList 属性返回元素的类名，作为 DOMTokenList 对象。可以remove，add，toggle
+      this.classList.toggle('completed');
+    })
+  }
+  </script>
+</body>
+</html>

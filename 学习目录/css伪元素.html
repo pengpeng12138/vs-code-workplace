@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<style>
+.list{
+    width:240px;
+    height:32px;
+    line-height:32px;
+    background-color:pink;
+    overflow: hidden;
+}
+.list a{color:#333;text-decoration: none}
+.list a::after{
+		content: "HTML5参考手册";  /* 这里因为有文字，直接写进去 */
+		color: #45B823;  /* 绿色字体颜色 */
+		display: block; /* 将其转换成块级元素，和他兄弟span一样 */
+}
+.list a:hover span{  /* 划过a所对应的区域，操作其后代span */
+    transform: translateY(-100%); /* 利用2d变形位移向上移动该元素的高度的100% */
+}
+/* 划过a所对应的区域，需要注意的是虽然操作的也是后代，但是这里选择器直接不能加空格  */
+.list a:hover::after{  
+    transform: translateY(-100%);
+}
+.list a span{
+    display: block;
+    transition: all 0.2s;
+}
+.list a::after{
+    content: "HTML5参考手册";
+    color: #45B823;
+    display: block;
+    transition: all 0.2s; /* 添加过渡 */
+}
+</style>
+<body>
+    <div class="list">
+        <a href="#">
+            <span>HTML5参考手册</span> <!-- 黑色字体的部分 -->
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .father{
+    width: 200px;
+    height:200px;
+    background-color: aliceblue
+  }
+
+  .son{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+  }
+  </style>
+  <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+  <script>
+  $(function(){
+    // $('.son').click(function(){
+    //   alert('son');
+    //   event.stopPropagation();
+    // })
+
+    // $('.father').click(function(){
+    //   alert("farther");
+    // })
+
+    // $('a').click(function(){
+    //   event.preventDefault();
+    // })
+    // $("input[type='submit']").click(function(){
+    //   alert("s");
+    // })
+    // $("input[type='submit']").trigger('click');
+    // $('a').click(function(){
+    //   alert('a');
+    // })
+    // $('a').trigger('click');
+    $('.son').on('myClick',function(){
+      alert('hah');
+    })
+    $('.son').trigger('myClick');
+  })
+  </script>
+</head>
+<body>
+  <div class="father">
+    <div class="son">
+    </div>
+  </div>
+  <a href="http://baidu.com">我是百度</span></a>
+  <form action="http://baidu.com"></form>
+  <input type="text">
+  <input type="submit">
+</body>
+</html>

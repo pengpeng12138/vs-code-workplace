@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //第一个应用场景
+  function sum(...numbers){
+    return numbers.reduce((prev,curr)=>prev+curr);
+  }
+  console.log(sum(1,2,3,4));
+  console.log(sum(5,6,5,3,4))
+
+
+  //第二个应用场景
+  function numberRete(rate,...amounts){
+    return amounts.map(amount =>amount * rate)
+  }
+  const amounts = numberRete(0.17,130,502,450);
+  console.log(amounts);
+  </script>
+</body>
+</html>
